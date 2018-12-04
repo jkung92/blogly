@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block Title %}
+Post Detail
+{% endblock %}
+
+{% block Content %}
+<h1>{{post.title}}</h1>
+<div>
+  <div> 
+    <p>
+      {{post.content}}
+    </p>
+    <br>
+    <p>
+      By {{post.user.first_name}} {{post.user.last_name}}
+    </p>
+    <br>
+    <p> Tags : 
+    {% for tag in tagged_posts%}
+      {{posts.tag}}
+    {% endfor %}
+    </p>
+
+    <a href="/users/{{post.user_id}}" class="btn btn-outline-primary btn-sm" role="button" aria-pressed="true">Cancel</a>
+    <a href="/posts/{{post.id}}/edit" class="btn btn-primary btn-sm active" id="edit-user" role="button" aria-pressed="true">Edit</a>
+    <form action="/posts/{{post.id}}/delete" method="POST">
+      <input class="btn btn-danger btn-sm active mt-3" id="delete-post" role="button" type="submit" value="Delete"> 
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block Title %}
+Edit Tag 
+{% endblock %}
+
+{% block Content %}
+ <h1>Edit a tag</h1>
+<form method="POST" action = "/">
+    <div class="form-group">
+        <label for="tag-name-edit">Name</label>
+        <input type="text" class="form-control" name="tag-name-edit" placeholder="New Tag Name">
+      </div>
+      <a href="/users/{{user.id}}" class="btn btn-outline-primary" role="button" aria-pressed="true">Cancel</a>
+      <button type="submit" class="btn btn-success">Edit</button>
+  </form>
+
+  {% endblock %}
